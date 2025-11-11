@@ -22,7 +22,6 @@ public class HomePage {
 	public WebElement getLeads_Link() {
 		return leadsLink;
 	}
-
 	
 	@FindBy(linkText = "Organizations")
 	private WebElement orgLink;
