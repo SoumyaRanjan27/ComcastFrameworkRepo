@@ -16,10 +16,12 @@ public class HomePage {
 	}
 	
 	@FindBy(linkText = "Leads")
-	private WebElement leadsLink;
+	private WebElement leads_Link;
 
-	public WebElement getLeadsLink() {
-		return leadsLink;
+	
+
+	public WebElement getLeads_Link() {
+		return leads_Link;
 	}
 
 	@FindBy(linkText = "Organizations")
