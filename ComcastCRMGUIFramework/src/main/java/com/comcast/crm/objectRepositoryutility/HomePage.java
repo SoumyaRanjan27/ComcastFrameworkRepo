@@ -18,7 +18,6 @@ public class HomePage {
 	@FindBy(linkText = "Leads")
 	private WebElement leadsLink;
 
-
 	public WebElement getLeadsLink() {
 		return leadsLink;
 	}
