@@ -158,7 +158,7 @@ public class CreateContactTest extends BaseClass {
 		ccp.getSavebtn().click();
 
 		// verifying contactLastname header msg
-		ContactInfoPage cip = new ContactInfoPage(driver);
+		ContactInfoPage cip = new ContactInfoPage(driver);	
 		String headerInfo = cip.getHeadermsg().getText();
 		boolean status2 = headerInfo.contains(contactLastname);
 		Assert.assertTrue(status2);

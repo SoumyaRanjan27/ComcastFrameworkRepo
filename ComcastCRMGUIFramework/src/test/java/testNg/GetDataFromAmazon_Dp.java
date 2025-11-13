@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import com.comcast.crm.generic.fileutility.ExcelFileUtility;
 
-public class GetDataFromAmazon_Dp_Test {
+public class GetDataFromAmazon_Dp {
 
 	@Test(dataProvider = "getData")
 	public void getProductInfoTest(String brandname, String prodname) {

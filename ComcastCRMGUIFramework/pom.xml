@@ -4,8 +4,72 @@
   <artifactId>ComcastCRMGUIFramework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <properties>
+  <maven.compiler.target>21</maven.compiler.target>
+  <maven.compiler.source>21</maven.compiler.source>
+  </properties>
+  
+  <profiles>
+  
+       <profile>
+          <id>FRT</id>
+          <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>suite_FullRegressionTest.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>      
+        </profile>
+      
+        <profile>
+          <id>RT</id>
+          <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>suite_RegressionTest.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>      
+        </profile>
+        
+        <profile>
+          <id>RRT</id>
+          <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>suite_RegionalRegressionTest.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>      
+        </profile>
+        
+  </profiles>
+  
+  
+  
   <dependencies>
-
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>

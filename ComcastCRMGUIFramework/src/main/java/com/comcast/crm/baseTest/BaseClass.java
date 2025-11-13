@@ -15,11 +15,6 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentReporter;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.comcast.crm.generic.databaseUtility.DataBaseUtility;
 import com.comcast.crm.generic.fileutility.ExcelFileUtility;
 import com.comcast.crm.generic.fileutility.PropertiesFileUtility;
@@ -50,7 +45,9 @@ public class BaseClass {
 	@BeforeClass(groups= {"SmokeTest","RegressionTest"})
 	public void configBC( @Optional("chrome") String browser) throws IOException {
 		System.out.println("==launch the Browser==");
-		String BROWSER = browser;
+		//String BROWSER = browser;
+		String BROWSER=System.getProperty("browser",putil.getDataFromPropertiesFile("browser"));
+		
 		if (BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
 		} else if (BROWSER.equals("edge")) {
@@ -67,9 +64,12 @@ public class BaseClass {
 	@BeforeMethod(groups= {"SmokeTest","RegressionTest"})
 	public void ConfigBM() throws IOException {
 		System.out.println("===Login===");
-		String URL=putil.getDataFromPropertiesFile("url");
-		String USERNAME=putil.getDataFromPropertiesFile("username");
-		String PASSWORD=putil.getDataFromPropertiesFile("password");
+		//String URL=putil.getDataFromPropertiesFile("url");
+		//String USERNAME=putil.getDataFromPropertiesFile("username");
+		//String PASSWORD=putil.getDataFromPropertiesFile("password");
+		String URL=System.getProperty("url",putil.getDataFromPropertiesFile("url"));
+		String USERNAME=System.getProperty("username",putil.getDataFromPropertiesFile("username"));
+		String PASSWORD=System.getProperty("password",putil.getDataFromPropertiesFile("password"));
 
 		LoginPage lp=new LoginPage(driver);
 		lp.LoginToApp(URL, USERNAME, PASSWORD);

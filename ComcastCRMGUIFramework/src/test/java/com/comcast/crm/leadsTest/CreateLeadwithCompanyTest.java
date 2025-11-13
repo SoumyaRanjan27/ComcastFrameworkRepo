@@ -15,7 +15,7 @@ import com.comcast.crm.generic.fileutility.PropertiesFileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 
-public class CreateLeadwithCompany {
+public class CreateLeadwithCompanyTest {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 
